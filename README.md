@@ -54,3 +54,4 @@ sudo ./tools/bin/sdkmanager --sdk_root=$(pwd) "build-tools;28.0.3" "emulator" "p
 3. https://www.geeksforgeeks.org/how-to-build-and-release-flutter-application-in-android-device/  
 4. https://flutteragency.com/how-to-build-flutter-app-in-release-mode-for-ios/  
 5. https://github.com/koel/player  
+6. https://stackoverflow.com/questions/49175231/flutter-does-not-find-android-sdk
