@@ -1,6 +1,6 @@
 # koel
 
-Instructions:
+## Instructions:
 ```
 docker run -it --rm phanan/koel bash
 touch .env; echo 'APP_KEY=' >> .env
@@ -27,7 +27,28 @@ password: KoelIsCool
 curl localhost:8080
 ```
 
-References:
+## Build the Koel mobile player
+### Android
+
+#### Pre-requisite
+0. Install Android SDK:
+cd /opt
+sudo mkdir android-sdk && cd android-sdk
+sudo wget https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
+sudo unzip commandlinetools-linux-6200805_latest.zip
+sudo ./tools/bin/sdkmanager --sdk_root=$(pwd) "build-tools;28.0.3" "emulator" "platform-tools" "platforms;android-28" "tools"
+
+1. Clone the repository: `git clone https://github.com/koel/player`
+2. Go to root and run: `flutter build appbundle` or `flutter build apk --split-per-abi`
+3. Install an APK on a device: `flutter install`
+
+### iOS
+1. Clone the repository: `git clone https://github.com/koel/player`
+2. Go to root and run: `flutter build ios`
+3. You need a Mac to continue building the iOS binary
+4. Follow the next steps in Reference #4
+
+## References:
 1. https://www.howtoforge.com/how-to-install-koel-music-streaming-server-using-docker-on-rocky-linux-8/  
 2. https://github.com/koel/docker/blob/master/docker-compose.postgres.yml  
 3. https://www.geeksforgeeks.org/how-to-build-and-release-flutter-application-in-android-device/  
