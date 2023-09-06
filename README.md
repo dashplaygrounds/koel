@@ -36,8 +36,8 @@ sudo add-apt-repository ppa:maarten-fonville/android-studio
 sudo apt update
 sudo apt install android-studio -y
 // Install via SDK manager instead
-# wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
-# unzip -d /home/admin/Android/Sdk/ commandlinetools-linux-10406996_latest.zip
+// wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
+// unzip -d /home/admin/Android/Sdk/ commandlinetools-linux-10406996_latest.zip
 sudo apt install openjdk-17-jre -y
 tee -a /home/admin/.bashrc > /dev/null <<EOT
 export ANDROID_HOME=/home/admin/Android/Sdk
