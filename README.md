@@ -12,6 +12,7 @@ cd ~/projects/koel
 mkdir music
 cp koel.env .env
 # Replace the APP_KEY string with a new one, save and exit
+# Replace the APP_URL string with a local or production one, save and exit
 
 # Initialize Koel
 docker exec --user www-data -it koel bash
