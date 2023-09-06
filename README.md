@@ -32,11 +32,11 @@ curl localhost:8080
 
 #### Pre-requisite
 0. Install Android SDK:
-cd /opt
-sudo mkdir android-sdk && cd android-sdk
-sudo wget https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip
-sudo unzip commandlinetools-linux-6200805_latest.zip
-sudo ./tools/bin/sdkmanager --sdk_root=$(pwd) "build-tools;28.0.3" "emulator" "platform-tools" "platforms;android-28" "tools"
+sudo add-apt-repository ppa:maarten-fonville/android-studio
+sudo apt update
+sudo apt install android-studio -y
+# flutter config --android-sdk="$ANDROID_HOME/cmdline-tools"
+flutter doctor
 
 1. Clone the repository: `git clone https://github.com/koel/player`
 2. Go to root and run: `flutter build appbundle` or `flutter build apk --split-per-abi`
@@ -55,3 +55,6 @@ sudo ./tools/bin/sdkmanager --sdk_root=$(pwd) "build-tools;28.0.3" "emulator" "p
 4. https://flutteragency.com/how-to-build-flutter-app-in-release-mode-for-ios/  
 5. https://github.com/koel/player  
 6. https://stackoverflow.com/questions/49175231/flutter-does-not-find-android-sdk
+7. https://developer.android.com/tools/releases/platform-tools
+8. https://developer.android.com/studio
+9. https://medium.com/@barcelos.ds/install-android-sdk-in-the-ubuntu-20-04-lts-without-android-studio-1b629924d6c5
