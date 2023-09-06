@@ -2,13 +2,15 @@ version: '3.3'
 
 services:
   koel:
-    image: phanan/koel
     container_name: koel
+    image: phanan/koel
     depends_on:
       - koeldb
     restart: always
+    networks:
+      - koelnet
     ports:
-      - 8080:80
+      - '8080:80'
     environment:
       - DB_CONNECTION=pgsql
       # - DB_CONNECTION=mysql
@@ -19,13 +21,18 @@ services:
     volumes:
       - ./music:/music
       - ./.env:/var/www/html/.env
-      - covers:/var/www/html/public/img/covers
-      - search_index:/var/www/html/storage/search-indexes
+      - ./covers:/var/www/html/public/img/covers
+      - ./search_indexes:/var/www/html/storage/search-indexes
 
   koeldb:
+    container_name: koeldb
     image: postgres:13
     # image: mysql/mysql-server:8.0
     restart: always
+    networks:
+      - koelnet
+    ports:
+      - '5432:5432'
     volumes:
       - db:/var/lib/postgresql/data
     #  - db:/var/lib/mysql
@@ -37,11 +44,9 @@ services:
     #  - MYSQL_DATABASE=koel
     #  - MYSQL_USER=koel
     #  - MYSQL_PASSWORD=koelpassword
-
 volumes:
   db:
     driver: local
-  covers:
-    driver: local
-  search_index:
-    driver: local
+networks:
+  koelnet:
+    external: true
