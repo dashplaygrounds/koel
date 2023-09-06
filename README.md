@@ -50,7 +50,7 @@ flutter doctor --android-licenses
 flutter doctor
 
 1. Clone the repository: `git clone https://github.com/koel/player`
-2. Go to root and run: `flutter build appbundle` or `flutter build apk --split-per-abi`
+2. Go to root and run: `flutter build appbundle` or `flutter build apk --release`
 3. Install an APK on a device: `flutter install`
 
 ### iOS
