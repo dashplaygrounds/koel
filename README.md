@@ -35,9 +35,16 @@ curl localhost:8080
 sudo add-apt-repository ppa:maarten-fonville/android-studio
 sudo apt update
 sudo apt install android-studio -y
-# flutter config --android-sdk="$ANDROID_HOME/cmdline-tools"
+wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
+unzip -d /home/admin/Android/Sdk/ commandlinetools-linux-10406996_latest.zip
+flutter config --android-sdk="/home/admin/Android/Sdk"
+flutter doctor --android-licenses
 flutter doctor
-
+tee -a /home/admin/.bashrc > /dev/null <<EOT
+export ANDROID_HOME=/home/admin/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/bin
+EOT
+source ~/.bashrc
 1. Clone the repository: `git clone https://github.com/koel/player`
 2. Go to root and run: `flutter build appbundle` or `flutter build apk --split-per-abi`
 3. Install an APK on a device: `flutter install`
