@@ -14,12 +14,13 @@ cp koel.env .env
 # Replace the APP_URL string with a local or production one, save and exit
 
 # Initialize Koel
+sudo rm -rf music/
 sh deploy.sh
 docker exec --user www-data -it koel bash
 php artisan koel:init --no-assets
+
 ## follow along the instructions
 exit
-rm -rf music/
 docker exec -it koel bash -c "chown -R www-data:www-data /music"
 
 # Default Administrator credentials
