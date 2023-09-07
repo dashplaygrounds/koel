@@ -15,6 +15,7 @@ cp koel.env .env
 
 # Initialize Koel
 sudo rm -rf music/
+docker compose down -v
 sh deploy.sh
 docker exec --user www-data -it koel bash
 php artisan koel:init --no-assets
