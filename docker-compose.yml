@@ -21,8 +21,8 @@ services:
     volumes:
       - ./music:/music
       - ./.env:/var/www/html/.env
-      - ./covers:/var/www/html/public/img/covers
-      - ./search_indexes:/var/www/html/storage/search-indexes
+      - covers:/var/www/html/public/img/covers
+      - search_indexes:/var/www/html/storage/search-indexes
 
   koeldb:
     container_name: koeldb
@@ -46,6 +46,10 @@ services:
     #  - MYSQL_PASSWORD=koelpassword
 volumes:
   db:
+    driver: local
+  covers:
+    driver: local
+  search_indexes:
     driver: local
 networks:
   koelnet:
