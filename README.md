@@ -23,6 +23,7 @@ php artisan koel:init --no-assets
 ## follow along the instructions
 exit
 docker exec -it koel bash -c "chown -R www-data:www-data /music"
+ls -lrt ./music
 
 # Default Administrator credentials
 email: admin@koel.dev
