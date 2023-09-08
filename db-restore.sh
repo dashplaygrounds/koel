@@ -2,5 +2,5 @@
 
 pg_restore -v --clean --if-exists \
 	-h localhost -p 5432 -U koel -d koel \
-	~/pglocal-backups/koel-pgdb-$(date +%m%d%Y_%H%M%S).dump
+	~/pglocal-backups/koel-pgdb-09082023_111602.dump
 echo Done!
